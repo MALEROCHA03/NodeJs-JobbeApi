@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/MALEROCHA03/NodeJs-JobbeApi/issues"
   },
-  "homepage": "https://github.com/MALEROCHA03/NodeJs-JobbeApi#readme"
+  "homepage": "https://github.com/MALEROCHA03/NodeJs-JobbeApi#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
 }
