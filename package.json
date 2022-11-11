@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-jobee-api",
+  "version": "1.0.0",
+  "description": "Api Jobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MALEROCHA03/NodeJs-JobbeApi.git"
+  },
+  "author": "Aleja Ortega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MALEROCHA03/NodeJs-JobbeApi/issues"
+  },
+  "homepage": "https://github.com/MALEROCHA03/NodeJs-JobbeApi#readme"
+}
