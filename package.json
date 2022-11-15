@@ -1,28 +1,8 @@
 {
-  "name": "nodejs-jobee-api",
-  "version": "1.0.0",
-  "description": "Api Jobs",
-  "main": "index.js",
-  "scripts": {
-    "start" : "node app.js",
-    "dev" : "nodemon app",
-    "prod" : "SET NODE_ENV=production & nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MALEROCHA03/NodeJs-JobbeApi.git"
-  },
-  "author": "Aleja Ortega",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MALEROCHA03/NodeJs-JobbeApi/issues"
-  },
-  "homepage": "https://github.com/MALEROCHA03/NodeJs-JobbeApi#readme",
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
+    "boom": "^7.3.0",
+    "fastify": "^4.9.2",
+    "fastify-swagger": "^5.2.0",
+    "mongoose": "^6.7.2"
   }
 }
