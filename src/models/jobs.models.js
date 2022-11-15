@@ -1,5 +1,4 @@
-const {Schema, model} = requiere('mongoose')
-
+const {Schema, model} = require('mongoose')
 
 const jobSchema = new Schema ({
     title: {
@@ -16,7 +15,7 @@ const jobSchema = new Schema ({
     },
     email: {
         type: String,
-        validate: [validator.isEmail, 'Please add a valid email.']
+      
     },
     address: {
         type: String,
@@ -116,4 +115,4 @@ const jobSchema = new Schema ({
 
 })
 
-module.exports = mongoose.model('Job', jobSchema);
+module.exports = model('Job', jobSchema);

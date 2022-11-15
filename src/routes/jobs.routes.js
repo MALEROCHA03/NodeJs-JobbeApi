@@ -1,41 +1,35 @@
 const { default: fastify } = require("fastify")
-
+const jobsController = require('../controllers/jobs.controller')
 const routes = [
 
 {
     url: '/jobs',
     method: 'GET',
-    handler: (request, reply) =>{
-        reply.send('Jobs')
-    }
+    handler: jobsController.getJobs
+   
 },
 {
-    url: '/job/:jobId',
+    url: '/job/:id',
     method: 'GET',
-    handler: (request, reply) =>{
-        reply.send('Single Jobs')
-    }
+    handler: jobsController.getJob
 },
 {
     url: '/jobs',
     method: 'POST',
-    handler: (request, reply) =>{
-        reply.send('creating Jobs')
-    }
+    handler: jobsController.createJob
+    
 },
 {
-    url: '/jobs/:jobId',
+    url: '/jobs/:id',
     method: 'DELETE',
-    handler: (request, reply) =>{
-        reply.send('Deleting a Job')
-    }
+    handler: jobsController.deleteJob
+   
 },
 {
-    url: '/jobs/:jobId',
+    url: '/jobs/:id',
     method: 'PUT',
-    handler: (request, reply) =>{
-        reply.send('Updating a Job')
-    }
+    handler: jobsController.updateJob
+   
 }
 ]
 
