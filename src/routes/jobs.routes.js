@@ -9,42 +9,49 @@ fastify.decorate("authenticate", async function (request, reply) {
     }
 });
 
-const routes  = [
+const routes = [
+    {
+        url: '/validateToken',
+        method: 'GET',
+        onRequest: [fastify.authenticate],
+        handler: jobsController.getValidateToken,
 
-{
-    url: '/jobs',
-    method: 'GET',
-    onRequest: [fastify.authenticate],
-    handler: jobsController.getJobs,
-   
-},
-{
-    url: '/job/:id',
-    method: 'GET',
-    onRequest: [fastify.authenticate],
-    handler: jobsController.getJob
-},
-{
-    url: '/jobs',
-    method: 'POST',
-    onRequest: [fastify.authenticate],
-    handler: jobsController.createJob
-    
-},
-{
-    url: '/jobs/:id',
-    method: 'DELETE',
-    onRequest: [fastify.authenticate],
-    handler: jobsController.deleteJob
-   
-},
-{
-    url: '/jobs/:id',
-    method: 'PUT',
-    onRequest: [fastify.authenticate],
-    handler: jobsController.updateJob
-   
-}
+    },
+
+    {
+        url: '/jobs',
+        method: 'GET',
+        onRequest: [fastify.authenticate],
+        handler: jobsController.getJobs,
+
+    },
+    {
+        url: '/job/:id',
+        method: 'GET',
+        onRequest: [fastify.authenticate],
+        handler: jobsController.getJob
+    },
+    {
+        url: '/jobs',
+        method: 'POST',
+        onRequest: [fastify.authenticate],
+        handler: jobsController.createJob
+
+    },
+    {
+        url: '/jobs/:id',
+        method: 'DELETE',
+        onRequest: [fastify.authenticate],
+        handler: jobsController.deleteJob
+
+    },
+    {
+        url: '/jobs/:id',
+        method: 'PUT',
+        onRequest: [fastify.authenticate],
+        handler: jobsController.updateJob
+
+    }
 ]
 
 module.exports = routes;

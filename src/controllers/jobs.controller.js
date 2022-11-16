@@ -2,6 +2,9 @@ const Jobs = require('../models/jobs.models');
 
 
 
+const getValidateToken = async (request, reply) => {   
+    return request.user;
+}
 
 const getJobs = async (request, reply) => {   
     const jobs = await Jobs.find()
@@ -46,6 +49,7 @@ module.exports = {
     getJob,
     createJob,
     deleteJob,
-    updateJob
+    updateJob,
+    getValidateToken
 
 }
