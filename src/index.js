@@ -27,12 +27,13 @@ fastify.get('/generateToken/:id', (request, reply) => {
 
 fastify.get('/validateToken',
     {
-    onRequest: [fastify.authenticate]
+        onRequest: [fastify.authenticate]
     }, async function (request, reply) {
         return request.user;
     })
 
 jobsRoutes.forEach((routes) => {
+
     fastify.route(routes);
 })
 
