@@ -4,8 +4,6 @@ fastify.register(require('@fastify/jwt'), {
     secret: 'mysecret'
 })
 
-const routes = require('./routes/jobs.routes');
-
 const jobsRoutes = require("./routes/jobs.routes")
 
 fastify.get('/generateToken/:id', (request, reply) => {
