@@ -1,18 +1,22 @@
-const fastify = require('fastify')(
-    {
-        logger: true
-    }
-);
+const fastify = require('fastify')();
 require('./utils/mongoose')
-const routes = require('./routes/jobs.routes');
+fastify.register(require('@fastify/jwt'), {
+    secret: 'mysecret'
+})
 
 const jobsRoutes = require("./routes/jobs.routes")
-fastify.get('/', (request, reply) => {
-    reply.send({hello: 'world'})
+
+fastify.get('/generateToken/:id', (request, reply) => {
+    const data = {
+        name: request.params.id
+    }
+    const token = fastify.jwt.sign(data);
+    reply.send({ token });
 });
 
 jobsRoutes.forEach((routes) => {
-  fastify.route(routes);
+
+    fastify.route(routes);
 })
 
 const start = async () => {
